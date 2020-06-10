@@ -9,7 +9,7 @@ function Leminator(opts) {
   this.trailBy = opts.trailBy || 10;
 
   this.shape = opts.shape || "circle";
-  this.initalSize = opts.initalSize || 100;
+  this.initialSize = opts.initialSize || 100;
   this.sizeScale = opts.sizeScale || -10;
   this.shapeCount = opts.shapeCount || 10;
 
@@ -44,7 +44,7 @@ Leminator.prototype.draw = function () {
 Leminator.prototype.drawShape = function (index) {
   fill(this.colorScaler.getColor(index));
   const circleDegrees = this.currentPosition - this.trailBy * index;
-  const circleSize = this.initalSize + this.sizeScale * index;
+  const circleSize = this.initialSize + this.sizeScale * index;
   const theta = (circleDegrees * Math.PI) / 180;
 
   const position = positionOnBernoulli(
