@@ -20,4 +20,17 @@ ColorScaler.prototype.greyscale = function (index) {
   return `rgb(${brightness},${brightness},${brightness})`;
 };
 
-ColorScaler.prototype.rainbow = function (index) {};
+ColorScaler.prototype.rainbow = function (index) {
+  const rainbowColors = [
+    '#FF0000',
+    '#FF7700',
+    '#FFDD00',
+    '#00FF00',
+    '#0000FF',
+    '#8A2BE2',
+    '#C77DF3'
+  ];
+
+  const colorIndex = index % rainbowColors.length;
+  return rainbowColors[colorIndex];
+};
